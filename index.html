@@ -19,7 +19,7 @@
             font-family: 'Orbitron', sans-serif;
         }
 
-        /* 3D Moving Grid Background (Sesuai Permintaan) */
+        /* 3D Moving Grid Background */
         .perspective-grid {
             position: absolute;
             inset: 0;
@@ -45,7 +45,7 @@
             100% { transform: perspective(600px) rotateX(60deg) scale(2.5) translateY(60px); }
         }
 
-        /* Cybernetic HUD / Radar Elements (Ala Desain 2) */
+        /* Cybernetic HUD / Radar Elements */
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
         
@@ -280,7 +280,7 @@
                                 <div class="absolute inset-0 bg-cyan-900/30 mix-blend-color z-20 group-hover:opacity-0 transition-opacity duration-500"></div>
                                 <!-- Efek Scanline pada foto -->
                                 <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,229,255,0.1)_50%)] bg-[size:100%_4px] z-30 pointer-events-none"></div>
-                                <img src="jpeg" class="w-full h-full object-cover filter contrast-125" onerror="this.style.display='none';">
+                                <img src="satu.jpeg" class="w-full h-full object-cover filter contrast-125" onerror="this.style.display='none';">
                             </div>
                         </div>
                     </div>
@@ -303,7 +303,7 @@
                         </div>
                         <div>
                             <p class="text-[10px] text-blue-600 uppercase tracking-widest font-bold mb-1 font-mono">Valid Credentials</p>
-                            <h3 class="text-3xl font-display font-black text-white" style="text-shadow: 0 0 10px rgba(59,130,246,0.7);">13</h3>
+                            <h3 class="text-3xl font-display font-black text-white" style="text-shadow: 0 0 10px rgba(59,130,246,0.7);">14</h3>
                             <p class="text-[10px] text-slate-500 mt-1 uppercase font-mono">Dokumen Sertifikasi Resmi</p>
                         </div>
                     </div>
@@ -478,14 +478,14 @@
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
-                    <button onclick="switchTab('projects')" id="tab-projects" class="bg-[#00E5FF] text-[#010614] px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest transition-colors shadow-[0_0_15px_rgba(0,229,255,0.4)] border border-[#00E5FF] font-mono">Projects</button>
-                    <button onclick="switchTab('certificates')" id="tab-certificates" class="bg-[#010614] text-[#00E5FF] px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest transition-colors hover:bg-cyan-900/30 border border-cyan-800 font-mono">Certificates</button>
+                    <button onclick="switchTab('projects')" id="tab-projects" class="bg-[#010614] text-[#00E5FF] px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest transition-colors hover:bg-cyan-900/30 border border-cyan-800 font-mono">Projects</button>
+                    <button onclick="switchTab('certificates')" id="tab-certificates" class="bg-[#00E5FF] text-[#010614] px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest transition-colors shadow-[0_0_15px_rgba(0,229,255,0.4)] border border-[#00E5FF] font-mono">Certificates</button>
                     <button onclick="switchTab('tech')" id="tab-tech" class="bg-[#010614] text-[#00E5FF] px-6 py-2 rounded-sm font-bold text-xs uppercase tracking-widest transition-colors hover:bg-cyan-900/30 border border-cyan-800 font-mono">Stack Info</button>
                 </div>
 
                 <div id="showcase-content" class="min-h-[400px]">
                     <!-- 1. TAB PROJECTS -->
-                    <div id="grid-projects" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 transition-all">
+                    <div id="grid-projects" class="hidden grid sm:grid-cols-2 md:grid-cols-3 gap-6 transition-all">
                         <!-- Project 1 -->
                         <div class="sci-fi-card p-5 rounded-xl group flex flex-col justify-between">
                             <div>
@@ -580,171 +580,224 @@
                         </div>
                     </div>
 
-                    <!-- 2. TAB CERTIFICATES (13 Items) -->
-                    <div id="grid-certificates" class="hidden flex flex-col space-y-8">
-                        <div class="flex justify-center gap-3 mb-6">
-                            <button onclick="filterCertCategory('all')" id="btn-all" class="sub-filter-btn bg-[#00E5FF] text-[#010614] font-bold px-4 py-1.5 rounded-sm font-mono text-[10px] uppercase tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.4)] border border-[#00E5FF] transition-all">All Files</button>
-                            <button onclick="filterCertCategory('prestasi')" id="btn-prestasi" class="sub-filter-btn bg-[#010614] text-cyan-500 hover:text-[#00E5FF] border border-cyan-800 hover:bg-cyan-900/30 font-bold px-4 py-1.5 rounded-sm font-mono text-[10px] uppercase tracking-widest transition-all">Achievements</button>
-                            <button onclick="filterCertCategory('seminar')" id="btn-seminar" class="sub-filter-btn bg-[#010614] text-cyan-500 hover:text-[#00E5FF] border border-cyan-800 hover:bg-cyan-900/30 font-bold px-4 py-1.5 rounded-sm font-mono text-[10px] uppercase tracking-widest transition-all">Seminars</button>
+                    <!-- 2. TAB CERTIFICATES (14 Items - Desain Baru Berdasarkan Referensi + Efek Glowing Neon) -->
+                    <div id="grid-certificates" class="flex flex-col space-y-8">
+                        <div class="flex flex-wrap justify-center gap-3 mb-6">
+                            <button onclick="filterCertCategory('all')" id="btn-all" class="sub-filter-btn bg-[#f97316] text-white font-bold px-6 py-2 rounded-md text-xs uppercase tracking-widest transition-all">Semua</button>
+                            <button onclick="filterCertCategory('prestasi')" id="btn-prestasi" class="sub-filter-btn bg-[#1e293b] text-slate-300 hover:text-white hover:bg-slate-700 font-bold px-6 py-2 rounded-md text-xs uppercase tracking-widest transition-all">Kejuaraan</button>
+                            <button onclick="filterCertCategory('seminar')" id="btn-seminar" class="sub-filter-btn bg-[#1e293b] text-slate-300 hover:text-white hover:bg-slate-700 font-bold px-6 py-2 rounded-md text-xs uppercase tracking-widest transition-all">Seminar/Konferensi</button>
                         </div>
 
                         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" id="cert-grid-inner">
+                            
                             <!-- Cert 1 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('satu.jpg', 'Juara I Subtema Sosial Humaniora Kelas C')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-cyan-900/50">
-                                    <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,229,255,0.05)_50%)] bg-[size:100%_4px] z-10 pointer-events-none"></div>
-                                    <i class="fas fa-trophy text-3xl text-cyan-900 group-hover:text-[#00E5FF] transition-colors z-0"></i>
-                                    <img src="satu.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('satu.jpg', 'Subtema Sosial Humaniora Kelas C')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="satu.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-[#00E5FF] font-bold uppercase tracking-widest font-mono">Nasional — Juara 1</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Sosial Humaniora C</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <!-- Aksen Cybernetics -->
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — JUARA 1
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Subtema Sosial Humaniora Kelas C</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Kompetisi Ilmiah Nasional (2026)</p>
                                 </div>
                             </div>
                             
                             <!-- Cert 2 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('dua.jpg', 'Juara III Kategori Presenter Terbaik')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-blue-900/50">
-                                    <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(59,130,246,0.05)_50%)] bg-[size:100%_4px] z-10 pointer-events-none"></div>
-                                    <i class="fas fa-microphone text-3xl text-blue-900 group-hover:text-blue-500 transition-colors z-0"></i>
-                                    <img src="dua.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('dua.jpg', 'Presenter Terbaik Subtema Ekonomi')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="dua.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-blue-400 font-bold uppercase tracking-widest font-mono">Nasional — Juara 3</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Presenter Terbaik Eko</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — JUARA 3
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Presenter Terbaik Subtema Ekonomi</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Forum Presentasi Riset (2026)</p>
                                 </div>
                             </div>
                             
                             <!-- Cert 3 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('tiga.jpg', 'Juara Harapan 1 Artikel Terbaik')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-teal-900/50">
-                                    <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(20,184,166,0.05)_50%)] bg-[size:100%_4px] z-10 pointer-events-none"></div>
-                                    <i class="fas fa-file-lines text-3xl text-teal-900 group-hover:text-teal-500 transition-colors z-0"></i>
-                                    <img src="tiga.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('tiga.jpg', 'Artikel Terbaik Subtema Ekonomi')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="tiga.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-teal-400 font-bold uppercase tracking-widest font-mono">Nasional — Harapan 1</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Artikel Terbaik Eko</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — HARAPAN 1
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Artikel Terbaik Subtema Ekonomi</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Kompetisi Artikel Ilmiah (2026)</p>
                                 </div>
                             </div>
                             
                             <!-- Cert 4 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('empat.jpg', 'Juara Harapan 1 Bidang Kesehatan & Sains')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-cyan-900/50">
-                                    <i class="fas fa-heart-pulse text-3xl text-cyan-900 group-hover:text-[#00E5FF] transition-colors z-0"></i>
-                                    <img src="empat.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('empat.jpg', 'Subtema Kesehatan & Sains')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="empat.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-[#00E5FF] font-bold uppercase tracking-widest font-mono">Nasional — Harapan 1</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Kesehatan & Sains</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — HARAPAN 1
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Subtema Kesehatan & Sains</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Kompetisi Karya Sains (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 5 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('lima.jpg', 'Juara Harapan 1 Pendidikan')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-indigo-900/50">
-                                    <i class="fas fa-graduation-cap text-3xl text-indigo-900 group-hover:text-indigo-400 transition-colors z-0"></i>
-                                    <img src="lima.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('lima.jpg', 'Subtema Pendidikan Kelas B')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="lima.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-indigo-400 font-bold uppercase tracking-widest font-mono">Nasional — Harapan 1</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Pendidikan Kelas B</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — HARAPAN 1
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Subtema Pendidikan Kelas B</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Pengembangan Edukasi (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 6 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('enam.jpg', 'Finalis Sosial Humaniora')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-cyan-900/50">
-                                    <i class="fas fa-medal text-3xl text-cyan-900 group-hover:text-cyan-500 transition-colors z-0"></i>
-                                    <img src="enam.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('enam.jpg', 'Finalis Subtema Sosial Humaniora')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="enam.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-cyan-500 font-bold uppercase tracking-widest font-mono">Nasional — Finalis</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Sosial Humaniora C</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — FINALIS
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Finalis Subtema Sosial Humaniora</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Kompetisi Ilmiah Nasional (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 7 -->
-                            <div class="cert-card-item item-prestasi sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('tujuh.jpg', 'Finalis Pendidikan Berkelanjutan')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-teal-900/50">
-                                    <i class="fas fa-leaf text-3xl text-teal-900 group-hover:text-teal-400 transition-colors z-0"></i>
-                                    <img src="tujuh.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-prestasi bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('tujuh.jpg', 'Finalis Pendidikan Berkelanjutan')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="tujuh.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-teal-400 font-bold uppercase tracking-widest font-mono">Nasional — Finalis</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Pendidikan Berkelanjutan</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — FINALIS
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Finalis Pendidikan Berkelanjutan</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Kompetisi Ilmiah Nasional (2026)</p>
                                 </div>
                             </div>
                             
                             <!-- Cert 8 -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('delapan.jpg', 'Narasumber Empowering Global Youth Leadership')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-blue-900/50">
-                                    <i class="fas fa-globe text-3xl text-blue-900 group-hover:text-blue-500 transition-colors z-0"></i>
-                                    <img src="delapan.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('delapan.jpg', 'Narasumber Empowering Global Youth')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="delapan.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-blue-400 font-bold uppercase tracking-widest font-mono">Global — Speaker</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Youth Leadership Conf</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        GLOBAL — SPEAKER
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Narasumber Empowering Global</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Youth Leadership Conference (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 9 -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('sembilan.jpg', 'Narasumber & Peserta Aksi Generasi Muda untuk Bangsa')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-cyan-900/50">
-                                    <i class="fas fa-users text-3xl text-cyan-900 group-hover:text-[#00E5FF] transition-colors z-0"></i>
-                                    <img src="sembilan.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('sembilan.jpg', 'Narasumber & Peserta Aksi Generasi Muda')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="sembilan.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-[#00E5FF] font-bold uppercase tracking-widest font-mono">Nasional — Narasumber</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Aksi Generasi Muda</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — NARASUMBER
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Narasumber & Peserta</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Aksi Generasi Muda untuk Bangsa (2026)</p>
                                 </div>
                             </div>
                             
                             <!-- Cert 10 -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('sepuluh.jpg', 'Peserta Akselerasi Peran Mahasiswa dalam SDGs & AI')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-teal-900/50">
-                                    <i class="fas fa-robot text-3xl text-teal-900 group-hover:text-teal-400 transition-colors z-0"></i>
-                                    <img src="sepuluh.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('sepuluh.jpg', 'Peserta Peran Mahasiswa dalam SDGs')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="sepuluh.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-teal-400 font-bold uppercase tracking-widest font-mono">Nasional — Workshop</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Integrasi Info & AI</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — WORKSHOP
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Peserta Peran Mahasiswa</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Workshop SDGs & AI (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 11 -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('sebelas.jpg', 'Peserta Mahasiswa Berdaya Mewujudkan Wirausaha')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-orange-900/50">
-                                    <i class="fas fa-lightbulb text-3xl text-orange-900 group-hover:text-orange-500 transition-colors z-0"></i>
-                                    <img src="sebelas.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('sebelas.jpg', 'Peserta Seminar Mewujudkan Wirausaha')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="sebelas.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-orange-400 font-bold uppercase tracking-widest font-mono">Nasional — Seminar</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Mewujudkan Wirausaha</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — SEMINAR
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Peserta Mahasiswa Berdaya</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Seminar Mewujudkan Wirausaha (2026)</p>
                                 </div>
                             </div>
 
                             <!-- Cert 12 -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group" onclick="openModalLightbox('duabelas.jpg', 'Peserta Tips & Strategi Membuat Poster Kreatif')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-pink-900/50">
-                                    <i class="fas fa-palette text-3xl text-pink-900 group-hover:text-pink-400 transition-colors z-0"></i>
-                                    <img src="duabelas.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('duabelas.jpg', 'Peserta Webinar Poster Kreatif')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="duabelas.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-pink-400 font-bold uppercase tracking-widest font-mono">Nasional — Webinar</span>
-                                    <h4 class="font-bold text-sm text-white mt-1 leading-tight font-display tracking-wide">Strategi Poster Kreatif</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        NASIONAL — WEBINAR
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Peserta Tips & Strategi</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Webinar Poster Kreatif (2026)</p>
                                 </div>
                             </div>
 
-                            <!-- Cert 13 (BARU) -->
-                            <div class="cert-card-item item-seminar sci-fi-card overflow-hidden p-0 rounded-xl cursor-pointer group border border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.2)]" onclick="openModalLightbox('tigabelas.jpg', 'Peserta Pelatihan Gemini Innovation Challenge DIY 2026')">
-                                <div class="h-40 bg-[#010614] relative flex items-center justify-center overflow-hidden border-b border-blue-500/50">
-                                    <i class="fas fa-star text-3xl text-blue-900 group-hover:text-blue-400 transition-colors z-0"></i>
-                                    <img src="tigabelas.jpg" alt="Dokumen" class="w-full h-full object-contain absolute inset-0 z-20">
+                            <!-- Cert 13 -->
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('tigabelas.jpg', 'Peserta Gemini Innovation Challenge')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="tigabelas.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-                                <div class="p-4">
-                                    <span class="text-[9px] text-blue-400 font-bold uppercase tracking-widest font-mono bg-blue-900/30 px-2 py-1 rounded border border-blue-800">UAD — Peserta</span>
-                                    <h4 class="font-bold text-sm text-white mt-2 leading-tight font-display tracking-wide">Gemini Innovation Challenge DIY</h4>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        UAD — PESERTA
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">Peserta Pelatihan</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Gemini Innovation Challenge DIY (2026)</p>
+                                </div>
+                            </div>
+
+                            <!-- Cert 14 (BARU) -->
+                            <div class="cert-card-item item-seminar bg-[#0f172a] rounded-2xl overflow-hidden cursor-pointer group hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:border-[#00E5FF] transition-all duration-300 border border-slate-800 flex flex-col" onclick="openModalLightbox('empatbelas.jpg', 'Participant 3rd International Economic Fair')">
+                                <div class="h-48 bg-white relative flex items-center justify-center overflow-hidden">
+                                    <img src="empatbelas.jpg" alt="Dokumen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+                                <div class="p-5 flex flex-col flex-grow relative">
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-[#00E5FF] transition-colors m-2 opacity-50"></div>
+                                    <div class="self-start bg-[#f97316]/20 text-[#f97316] border border-[#f97316]/30 px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-3">
+                                        GLOBAL — PARTICIPANT
+                                    </div>
+                                    <h4 class="font-bold text-base text-white mb-1 leading-snug group-hover:text-[#00E5FF] transition-colors">3rd International Economic Fair</h4>
+                                    <p class="text-xs text-slate-400 mt-auto pt-2">Faculty of Economics and Business UAD (2026)</p>
                                 </div>
                             </div>
 
@@ -832,7 +885,7 @@
         </section>
     </div>
 
-    <!-- Halaman Detail Proyek Tema Holografik -->
+    <!-- Halaman Detail Proyek -->
     <div id="detail-page" class="fixed inset-0 z-50 bg-[#010614]/95 backdrop-blur-xl overflow-y-auto hidden opacity-0 transition-all duration-500 transform translate-x-full">
         <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,229,255,0.02)_50%)] bg-[size:100%_4px] pointer-events-none"></div>
         <div class="max-w-4xl mx-auto px-6 py-24 relative z-10">
@@ -883,7 +936,9 @@
         let index = 0;
         function typeText() {
             if (index < text.length) {
-                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                if(document.getElementById("typing-text")) {
+                    document.getElementById("typing-text").innerHTML += text.charAt(index);
+                }
                 index++;
                 setTimeout(typeText, 100);
             }
@@ -941,17 +996,15 @@
             const buttons = document.querySelectorAll('.sub-filter-btn');
 
             buttons.forEach(btn => {
-                btn.classList.remove('bg-[#00E5FF]', 'text-[#010614]', 'shadow-[0_0_10px_rgba(0,229,255,0.4)]', 'border-[#00E5FF]');
-                btn.classList.add('bg-[#010614]', 'text-cyan-500', 'border-cyan-800');
+                btn.className = "sub-filter-btn bg-[#1e293b] text-slate-300 hover:text-white hover:bg-slate-700 font-bold px-6 py-2 rounded-md text-xs uppercase tracking-widest transition-all";
             });
 
             const activeBtn = document.getElementById(`btn-${category}`);
-            activeBtn.classList.remove('bg-[#010614]', 'text-cyan-500', 'border-cyan-800');
-            activeBtn.classList.add('bg-[#00E5FF]', 'text-[#010614]', 'shadow-[0_0_10px_rgba(0,229,255,0.4)]', 'border-[#00E5FF]');
+            activeBtn.className = "sub-filter-btn bg-[#f97316] text-white font-bold px-6 py-2 rounded-md text-xs uppercase tracking-widest transition-all";
 
             cards.forEach(card => {
                 if (category === 'all' || card.classList.contains(`item-${category}`)) {
-                    card.style.display = "block";
+                    card.style.display = "flex";
                 } else {
                     card.style.display = "none";
                 }
